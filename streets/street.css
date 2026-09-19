@@ -162,7 +162,9 @@
 .streetscape-media {
   background: var(--bg-tint);
   border-bottom: 1px solid var(--rule-bold);
-  height: 210px;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -170,6 +172,14 @@
   position: relative;
 }
 
+/* Anchor tag fills entire media box */
+.streetscape-media a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image fills box strictly without spilling over */
 .streetscape-media img {
   width: 100%;
   height: 100%;
@@ -197,6 +207,7 @@
 .streetscape-caption {
   padding: 1.2rem 1.4rem;
   background: var(--bg-card);
+  flex-grow: 1;
 }
 
 .streetscape-caption strong {
@@ -388,5 +399,154 @@
   }
   .streetscape-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ADVERT & EPHEMERA ARCHIVE (MASONRY COLUMNS)
+   ========================================================================== */
+
+.advert-archive-section {
+  margin-bottom: 4rem;
+}
+
+/* CSS Column Masonry */
+.advert-columns {
+  column-count: 3;
+  column-gap: 1.8rem;
+}
+
+/* Card Wrapper - prevent break inside */
+.advert-card {
+  break-inside: avoid;
+  margin-bottom: 1.8rem;
+  background: var(--bg-card);
+  border: 1px solid var(--rule-bold);
+  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Adverts */
+.advert-media {
+  background: var(--bg-tint);
+  border-bottom: 1px solid var(--rule-bold);
+  overflow: hidden;
+}
+
+.advert-media img {
+  width: 100%;
+  height: auto; /* Lets natural advert height flow without cropping */
+  display: block;
+  filter: sepia(0.08) contrast(1.05);
+}
+
+/* Text Classifieds */
+.advert-text {
+  padding: 1.4rem;
+}
+
+.classified-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  border-bottom: 1px solid var(--rule-subtle);
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.classified-body {
+  font-family: var(--font-serif);
+  font-size: 1.02rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+/* Typographic Framed Adverts */
+.advert-display {
+  padding: 0.8rem;
+}
+
+.display-ad-border {
+  border: 2px solid var(--text-primary);
+  padding: 1.2rem;
+  text-align: center;
+  background: #FCFAF6;
+}
+
+.display-ad-header {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--accent-rust);
+  margin-bottom: 0.4rem;
+}
+
+.display-ad-border h4 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  letter-spacing: 0.04em;
+  margin: 0.2rem 0;
+  color: var(--text-primary);
+}
+
+.display-ad-sub {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--rule-subtle);
+  padding-bottom: 0.5rem;
+}
+
+.display-ad-desc {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+}
+
+.display-ad-footer {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+/* Shared Meta Footer */
+.advert-meta {
+  padding: 0.65rem 1rem;
+  background: var(--bg-tint);
+  border-top: 1px dashed var(--rule-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.advert-source {
+  font-weight: 600;
+}
+
+/* Responsive adjustment */
+@media (max-width: 900px) {
+  .advert-columns {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .advert-columns {
+    column-count: 1;
   }
 }
