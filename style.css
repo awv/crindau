@@ -139,7 +139,7 @@ body {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: 3.5rem;
-  align-items: center;
+  align-items: start; /* Aligns map with top of the heading */
   border-bottom: 2px solid var(--rule-bold);
 }
 
@@ -203,12 +203,16 @@ body {
   background: var(--rule-subtle);
 }
 
-/* SVG District Map Frame */
+/* Sticky frame so the map remains anchored as you read */
 .portal-map-frame {
   background: var(--bg-card);
   border: 1px solid var(--rule-bold);
   box-shadow: 5px 5px 0 rgba(46, 43, 37, 0.08);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 2rem;
 }
 
 .map-frame-header {
@@ -607,6 +611,40 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.4rem;
+}
+
+/* Quarter Groups in Gazetteer */
+.street-quarter-group {
+  margin-top: 3.2rem;
+  padding-top: 1.5rem;
+  border-top: 1px dashed var(--rule-subtle);
+}
+
+.street-quarter-group:first-of-type {
+  margin-top: 1.5rem;
+  border-top: none;
+  padding-top: 0;
+}
+
+.quarter-heading-row {
+  margin-bottom: 1.4rem;
+}
+
+.quarter-tag {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.quarter-heading-row h3 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  line-height: 1.2;
+  color: var(--text-primary);
 }
 
 .street-card-link {

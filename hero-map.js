@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const mapElement = document.getElementById('hero-leaflet-map');
   if (!mapElement) return;
 
-  // Approximate centre of historic industrial Crindau
-  const crindauCentre = [51.5975, -2.9965];
+  // Centred on the core Crindau corridor (Albany St, Malpas Rd, and Crindau House)
+  const crindauCentre = [51.5992, -2.9978];
 
   const map = L.map('hero-leaflet-map', {
     center: crindauCentre,
@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', () => {
     attributionControl: false
   });
 
-  // Zoom control in top right
+  // Top-right zoom controls
   L.control.zoom({ position: 'topright' }).addTo(map);
 
-  // Standard OpenStreetMap tiles (free, public, no API key required)
+  // Standard OpenStreetMap tiles (no API key required)
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19
   }).addTo(map);
 
-  // Load and display existing building footprints from your GeoJSON file
+  // Load surveyed footprints if the GeoJSON file exists
   fetch('data/crindau-cadastre.geojson')
     .then(response => {
       if (!response.ok) throw new Error('GeoJSON not found');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }).addTo(map);
     })
     .catch(() => {
-      // Fallback markers for primary anchors until crindau-cadastre.geojson is loaded
+      // Fallback anchor markers if crindau-cadastre.geojson is not yet present
       const anchors = [
         { name: "Crindau House (c.1580)", coords: [51.5996, -2.9972], url: "buildings/crindau-house.html" },
         { name: "G.F. Lovell & Co. (Rexville)", coords: [51.5971, -2.9948], url: "buildings/lovells-confectionery.html" },
