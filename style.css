@@ -1,0 +1,717 @@
+:root {
+  --bg-page: #F6F3EB;
+  --bg-card: #FFFFFF;
+  --bg-tint: #EEE8DB;
+  --text-primary: #1C1E1B;
+  --text-secondary: #484D49;
+  --text-muted: #6B726C;
+  --rule-bold: #2E2B25;
+  --rule-subtle: #D5CEBD;
+  --rule-light: #E8E3D5;
+  --accent-rust: #832C1E;
+  --accent-rust-tint: #F4ECE9;
+  --accent-gold: #966E2E;
+  
+  --font-serif: "EB Garamond", Georgia, serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --font-heading: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Site Header */
+.site-header {
+  border-bottom: 2px solid var(--rule-bold);
+  padding: 2.2rem 0 1.6rem;
+  background: var(--bg-page);
+}
+
+.header-inner {
+  text-align: center;
+}
+
+.header-stamp {
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  letter-spacing: 0.22em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.site-title {
+  font-family: var(--font-heading);
+  font-size: 3.6rem;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.site-subtitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 1.6rem;
+}
+
+.site-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  border-top: 1px solid var(--rule-subtle);
+  padding-top: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.site-nav a:hover {
+  color: var(--accent-rust);
+}
+
+/* Common Section Masthead */
+.district-section {
+  padding: 4rem 0 2rem;
+  border-bottom: 1px solid var(--rule-subtle);
+}
+
+.section-masthead {
+  margin-bottom: 2rem;
+}
+
+.section-tag {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.section-masthead h2 {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.section-sub {
+  font-size: 1.08rem;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Topographic Hero Portal */
+.district-portal {
+  padding: 3.5rem 0;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  border-bottom: 2px solid var(--rule-bold);
+}
+
+.portal-narrative h2 {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.lead-text {
+  font-size: 1.25rem;
+  line-height: 1.65;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+}
+
+.portal-narrative p {
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+  margin-bottom: 1.5rem;
+}
+
+.district-key-metrics {
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--rule-bold);
+  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.08);
+  padding: 1.2rem 1.6rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.metric-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-val {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--accent-rust);
+}
+
+.metric-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+.metric-divider {
+  width: 1px;
+  height: 38px;
+  background: var(--rule-subtle);
+}
+
+/* SVG District Map Frame */
+.portal-map-frame {
+  background: var(--bg-card);
+  border: 1px solid var(--rule-bold);
+  box-shadow: 5px 5px 0 rgba(46, 43, 37, 0.08);
+  overflow: hidden;
+}
+
+.map-frame-header {
+  background: var(--rule-bold);
+  color: #FFF;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  padding: 0.6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.map-badge {
+  background: var(--accent-gold);
+  padding: 0.15rem 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.map-stage {
+  background: #EFE8DA;
+  padding: 1rem;
+}
+
+.map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-water-label,
+.map-rail-label,
+.map-street-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  fill: #615A4C;
+}
+
+.map-node {
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.map-node:hover {
+  opacity: 0.82;
+}
+
+.map-node-label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 700;
+  fill: #1C1E1B;
+}
+
+.map-sub-label {
+  font-family: var(--font-serif);
+  font-size: 8px;
+  font-style: italic;
+  fill: #484D49;
+}
+
+.map-frame-footer {
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--text-muted);
+  border-top: 1px solid var(--rule-light);
+  background: #FCFAF6;
+}
+
+/* ==========================================================================
+   FEATURED INDUSTRIAL STUDY (LOVELL'S) - FULL-BLEED IMAGE
+   ========================================================================== */
+.featured-industrial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--rule-bold);
+  box-shadow: 6px 6px 0 rgba(46, 43, 37, 0.08);
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.featured-visual-frame {
+  background: #1C1E1B;
+  border-right: 1px solid var(--rule-bold);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-plate-mount {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.featured-img-wrap {
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: hidden;
+  background: transparent;
+}
+
+.featured-img-wrap img.featured-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  filter: sepia(0.08) contrast(1.05);
+}
+
+.featured-plate-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2.2rem 1.4rem 1rem;
+  background: linear-gradient(to top, rgba(20, 20, 18, 0.88) 0%, rgba(20, 20, 18, 0.4) 65%, rgba(20, 20, 18, 0) 100%);
+  text-align: left;
+  line-height: 1.3;
+}
+
+.featured-plate-caption strong {
+  font-family: var(--font-heading);
+  font-size: 1.02rem;
+  color: #FFFFFF;
+  display: block;
+}
+
+.featured-plate-caption span {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #E2DAC7;
+  display: block;
+  margin-top: 0.2rem;
+}
+
+/* Right Content Area */
+.featured-body {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.featured-badge-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.badge-cat {
+  color: var(--accent-gold);
+}
+
+.badge-period {
+  color: var(--accent-rust);
+}
+
+.featured-body h3 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.featured-body p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 1.2rem;
+}
+
+.featured-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  border-top: 1px solid var(--rule-light);
+  padding-top: 1.4rem;
+  margin-top: 1.2rem;
+}
+
+.featured-meta-grid strong {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.featured-meta-grid span {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.inline-article-link {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent-rust);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.2rem;
+}
+
+.inline-article-link:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   LANDMARK ARCHIVE GRID (3-COLUMN CARDS WITH PHOTO / ICON SWITCH)
+   ========================================================================== */
+.landmark-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.landmark-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.landmark-entry-card {
+  background: var(--bg-card);
+  border: 1px solid var(--rule-bold);
+  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  overflow: hidden;
+}
+
+.landmark-card-link:hover .landmark-entry-card {
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0 rgba(46, 43, 37, 0.14);
+}
+
+/* Card image / icon header */
+.landmark-thumbnail-frame {
+  background: var(--bg-tint);
+  border-bottom: 1px solid var(--rule-bold);
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Full-bleed card photo when present */
+.landmark-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: sepia(0.08) contrast(1.05);
+  transition: transform 0.2s ease;
+}
+
+.landmark-card-link:hover .landmark-card-img {
+  transform: scale(1.03);
+}
+
+/* Architectural fallback state (icon + subtitle) */
+.landmark-icon-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem;
+}
+
+.landmark-icon-fallback svg {
+  width: 44px;
+  height: 44px;
+  stroke: var(--accent-rust);
+}
+
+.thumbnail-meta-text {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-top: 0.8rem;
+}
+
+.landmark-card-body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.landmark-cat-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cat-label {
+  color: var(--accent-gold);
+}
+
+.period-label {
+  color: var(--text-muted);
+}
+
+.landmark-card-body h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.landmark-card-body p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+}
+
+.landmark-card-foot {
+  border-top: 1px solid var(--rule-light);
+  padding-top: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--accent-rust);
+}
+
+.view-dossier-arrow {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--accent-rust);
+}
+
+/* ==========================================================================
+   STREETS GAZETTEER GRID
+   ========================================================================== */
+.streets-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+
+.street-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.street-summary-box {
+  background: var(--bg-card);
+  border: 1px solid var(--rule-subtle);
+  border-top: 3px solid var(--rule-bold);
+  padding: 1.2rem;
+  box-shadow: 3px 3px 0 rgba(46, 43, 37, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.street-card-link:hover .street-summary-box {
+  transform: translateY(-2px);
+  border-top-color: var(--accent-rust);
+}
+
+.street-badge-top {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.street-summary-box h4 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.street-dates {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.15rem;
+}
+
+.street-stats-line {
+  border-top: 1px solid var(--rule-light);
+  padding-top: 0.6rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.street-action-btn {
+  font-weight: 700;
+  color: var(--accent-rust);
+}
+
+/* Site Footer */
+.site-footer {
+  border-top: 2px solid var(--rule-bold);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.footer-meta {
+  font-family: var(--font-display);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .landmark-archive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .streets-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .featured-industrial-card {
+    grid-template-columns: 1fr;
+  }
+  .featured-visual-frame {
+    border-right: none;
+    border-bottom: 1px solid var(--rule-bold);
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .district-portal {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .site-title {
+    font-size: 2.8rem;
+  }
+  .landmark-archive-grid,
+  .streets-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,247 @@
+.map-page-main {
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+}
+
+.map-page-header {
+  border-bottom: 2px solid var(--rule-bold);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.header-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.active-points-badge {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-rust);
+}
+
+.map-page-header h2 {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.map-page-intro {
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  max-width: 80ch;
+  margin-bottom: 1.5rem;
+}
+
+/* Category Filters */
+.map-filter-bar {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--rule-bold);
+  padding: 0.4rem 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background: var(--accent-rust);
+  color: #FFF;
+  border-color: var(--accent-rust);
+}
+
+/* Cadastre Footprint Toggle & Legend */
+.cadastre-toggle-row {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+  flex-wrap: wrap;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+}
+
+.cadastre-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-primary);
+}
+
+.cadastre-toggle-label input[type="checkbox"] {
+  accent-color: var(--accent-rust);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.cadastre-legend-pill {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--rule-bold);
+  background: var(--bg-card);
+}
+
+.legend-surviving {
+  border-left: 4px solid var(--rule-bold);
+}
+
+.legend-demolished {
+  border-left: 4px dashed var(--accent-rust);
+  color: var(--accent-rust);
+}
+
+/* Map Frame */
+.map-viewport-frame {
+  background: var(--bg-card);
+  border: 2px solid var(--rule-bold);
+  box-shadow: 6px 6px 0 rgba(46, 43, 37, 0.08);
+  height: 780px;
+  max-height: 82vh;
+  position: relative;
+}
+
+#survey-map {
+  width: 100%;
+  height: 100%;
+  background: #EFE8DA;
+}
+
+/* Converts full OSM detail into an archival, warm-paper topographic map */
+.leaflet-tile-pane {
+  filter: grayscale(100%) sepia(30%) contrast(1.4) brightness(0.92);
+}
+
+/* Cadastral Polygon Styling */
+.cadastre-poly-surviving {
+  fill: #2E2B25;
+  fill-opacity: 0.35;
+  stroke: #2E2B25;
+  stroke-width: 2;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cadastre-poly-demolished {
+  fill: #832C1E;
+  fill-opacity: 0.25;
+  stroke: #832C1E;
+  stroke-width: 2;
+  stroke-dasharray: 5, 4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Custom Pin Styling */
+.archival-marker-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.archival-marker-pin:hover {
+  transform: scale(1.15);
+}
+
+.pin-manorial   { background: #966E2E; } /* Gold */
+.pin-industrial { background: #832C1E; } /* Rust Red */
+.pin-civic      { background: #2B5866; } /* Slate Blue */
+.pin-sports     { background: #3E6B48; } /* Forest Green */
+
+.archival-marker-pin svg {
+  width: 16px;
+  height: 16px;
+  stroke: #FFF;
+}
+
+/* Leaflet Archival Popup Overrides */
+.leaflet-popup-content-wrapper {
+  background: #FCFAF6;
+  border: 1px solid var(--rule-bold);
+  border-radius: 0;
+  padding: 0;
+  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.12);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 1.2rem 1.4rem;
+  font-family: var(--font-serif);
+  min-width: 240px;
+  max-width: 320px;
+}
+
+.leaflet-popup-tip {
+  background: #FCFAF6;
+}
+
+.popup-tag {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-gold);
+  display: block;
+}
+
+.popup-title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  line-height: 1.2;
+  margin: 0.2rem 0;
+  color: var(--text-primary);
+}
+
+.popup-period {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent-rust);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.popup-desc {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+}
+
+.popup-link {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-rust);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.popup-link:hover {
+  text-decoration: underline;
+}

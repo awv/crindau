@@ -1,0 +1,58 @@
+[
+  {
+    "id": "crindau-house",
+    "name": "Crindau House",
+    "period": "c.1580 – Present",
+    "category": "Domestic & Manorial",
+    "status": "Surviving (Grade II* Listed)",
+    "summary": "Substantial Tudor regional stone house, representing the ancient agrarian manor that preceded Crindau's industrial surge."
+  },
+  {
+    "id": "crindau-gas-works",
+    "name": "Newport Gas Company (Crindau Works)",
+    "period": "1880s – mid-20th C.",
+    "category": "Heavy Utility",
+    "status": "Demolished / Redeveloped",
+    "summary": "Expansive municipal works and chemical by-product plant situated at the bottom of Albany Street alongside the railway and river."
+  },
+  {
+    "id": "south-wales-glass",
+    "name": "South Wales Glass Works",
+    "period": "Late 19th C. – Early 20th C.",
+    "category": "Manufacturing",
+    "status": "Demolished",
+    "summary": "Major local employer reflected heavily in Albany Street directory entries for glassblowers, stokers, and packers."
+  },
+  {
+    "id": "lovells-confectionery",
+    "name": "G.F. Lovell & Co. Confectionery Works",
+    "period": "1913 – 2005",
+    "category": "Confectionery Manufacturing",
+    "status": "Demolished / Residential",
+    "summary": "Prominent toffee and sweet manufacturer (famous for Milky Lunch and Rexville), employing generations of local families."
+  },
+  {
+    "id": "lovells-athletic",
+    "name": "Rexville (Lovells Athletic FC)",
+    "period": "1918 – 1969",
+    "category": "Sporting & Social",
+    "status": "Demolished",
+    "summary": "The home ground of the confectionery works' team, drawing huge crowds for Southern League and Welsh Cup ties."
+  },
+  {
+    "id": "newport-smelting",
+    "name": "Newport Smelting Works",
+    "period": "19th C. – 20th C.",
+    "category": "Heavy Metallurgy",
+    "status": "Demolished",
+    "summary": "Specialist non-ferrous and copper smelting operations taking advantage of the rail links and coastal tidal wharves."
+  },
+  {
+    "id": "crindau-school",
+    "name": "Crindau Infants & Junior School",
+    "period": "1901 – Present",
+    "category": "Civic & Education",
+    "status": "Active",
+    "summary": "Built by the Newport School Board to serve the rapid population boom of railwaymen, gasworkers, and industrial labourers."
+  }
+]

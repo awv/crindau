@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastral Map Survey • Crindau Historical Gazetteer</title>
+  
+  <link rel="stylesheet" href="https://use.typekit.net/lko4kva.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="map.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="header-stamp">TOPOGRAPHICAL REGISTER &bull; SPATIAL SURVEY</div>
+      <h1 class="site-title">Crindau</h1>
+      <p class="site-subtitle">An Illustrated Survey of Manorial Estates, Heavy Industry &amp; Street Directories</p>
+      
+      <nav class="site-nav">
+        <a href="index.html">&larr; District Overview</a>
+        <a href="index.html#industrial-grid">Historic Anchors</a>
+        <a href="streets/albany-street.html">Albany Street</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap map-page-main">
+
+    <div class="map-page-header">
+      <div class="header-meta-row">
+        <span class="section-tag">SPATIAL GAZETTEER</span>
+        <span class="active-points-badge" id="point-counter">Loading Survey Coordinates...</span>
+      </div>
+      <h2>Topographical &amp; Industrial Survey Map</h2>
+      <p class="map-page-intro">
+        Spatial distribution of sixteenth-century manorial holdings, Victorian heavy works, riverside wharves, and community institutions across the Crindau quarter.
+      </p>
+
+      <!-- Category Filter Pills -->
+      <div class="map-filter-bar">
+        <button class="filter-pill active" data-cat="all">All Sites</button>
+        <button class="filter-pill" data-cat="manorial">Manorial &amp; Seats</button>
+        <button class="filter-pill" data-cat="industrial">Heavy Industry &amp; Utilities</button>
+        <button class="filter-pill" data-cat="civic">Civic &amp; Education</button>
+        <button class="filter-pill" data-cat="sports">Sport &amp; Social</button>
+      </div>
+
+      <!-- Cadastral Footprint Layer Toggle & Legend -->
+      <div class="cadastre-toggle-row">
+        <label class="cadastre-toggle-label">
+          <input type="checkbox" id="toggle-footprints" checked />
+          <span>Show Historic Building Footprints</span>
+        </label>
+        <span class="cadastre-legend-pill legend-surviving">Solid: Surviving Fabric</span>
+        <span class="cadastre-legend-pill legend-demolished">Dashed: Demolished / Cleared</span>
+      </div>
+    </div>
+
+    <!-- MAP CONTAINER -->
+    <div class="map-viewport-frame">
+      <div id="survey-map"></div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer wrap">
+    <div class="footer-meta">
+      <span>CRINDAU LOCAL HISTORY SURVEY</span>
+      <span>&bull;</span>
+      <span>NEWPORT, MONMOUTHSHIRE</span>
+    </div>
+  </footer>
+
+  <!-- Leaflet JS & Map Engine -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>
