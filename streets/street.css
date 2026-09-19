@@ -1,197 +1,254 @@
+/* ==========================================================================
+   STREET SURVEY & GAZETTEER STYLES
+   ========================================================================== */
+
+/* Masthead Spacing - generous top padding below global navigation */
 .street-masthead {
+  padding-top: 3.5rem;
+  padding-bottom: 1.8rem;
   border-bottom: 2px solid var(--rule-bold);
-  padding-bottom: 1.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.2rem;
 }
 
 .street-eyebrow {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.6rem;
   font-family: var(--font-display);
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   letter-spacing: 0.18em;
   color: var(--accent-gold);
   font-weight: 700;
-  margin-bottom: 0.5rem;
+}
+
+.status-pill {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-rust);
+  background: var(--accent-rust-tint);
+  border: 1px solid var(--accent-rust);
+  padding: 0.2rem 0.6rem;
 }
 
 .street-title {
   font-family: var(--font-heading);
-  font-size: 3.2rem;
+  font-size: 3rem;
   line-height: 1.1;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem;
 }
 
 .street-tagline {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-style: italic;
   color: var(--text-secondary);
-  max-width: 80ch;
 }
 
+/* Summary Metrics Bar */
 .street-summary-bar {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   background: var(--bg-card);
   border: 1px solid var(--rule-bold);
-  padding: 1.2rem 2rem;
+  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.08);
+  padding: 1.4rem 2rem;
   margin-bottom: 3rem;
-  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.06);
 }
 
 .summary-stat {
-  text-align: center;
   flex: 1;
+  text-align: center;
 }
 
-.summary-stat .stat-num {
+.stat-num {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--accent-rust);
-  line-height: 1;
   display: block;
+  line-height: 1;
 }
 
-.summary-stat .stat-lbl {
+.stat-lbl {
   font-family: var(--font-sans);
   font-size: 0.72rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: var(--text-muted);
-  margin-top: 0.2rem;
+  margin-top: 0.35rem;
   display: block;
 }
 
 .summary-sep {
   width: 1px;
+  height: 42px;
   background: var(--rule-subtle);
 }
 
-/* Streetscape Visual Gallery */
+/* Narrative Prose Block - distinct card with strong breathing room below */
+.street-narrative-section {
+  background: var(--bg-card);
+  border: 1px solid var(--rule-bold);
+  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.08);
+  padding: 2.2rem 2.6rem;
+  margin-bottom: 3.5rem;
+}
+
+.narrative-inner .section-tag {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--accent-gold);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.narrative-inner h3 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  line-height: 1.2;
+  margin-bottom: 1.1rem;
+  color: var(--text-primary);
+}
+
+.narrative-inner p {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 1.1rem;
+}
+
+.narrative-inner p:last-child {
+  margin-bottom: 0;
+}
+
+/* Streetscape Strip & Visuals */
 .streetscape-strip {
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .streetscape-header {
-  border-bottom: 1px solid var(--rule-bold);
-  padding-bottom: 0.4rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.6rem;
 }
 
 .streetscape-header h3 {
   font-family: var(--font-heading);
-  font-size: 1.6rem;
-  line-height: 1.15;
+  font-size: 1.85rem;
   color: var(--text-primary);
+  margin-top: 0.2rem;
 }
 
 .streetscape-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.8rem;
 }
 
 .streetscape-card {
   background: var(--bg-card);
   border: 1px solid var(--rule-bold);
-  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.06);
+  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.08);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .streetscape-media {
-  background: #EAE3D2;
+  background: var(--bg-tint);
   border-bottom: 1px solid var(--rule-bold);
-  min-height: 180px;
+  height: 210px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  text-align: center;
+  position: relative;
 }
 
 .streetscape-media img {
   width: 100%;
-  height: 180px;
+  height: 100%;
   object-fit: cover;
   display: block;
+  filter: sepia(0.08) contrast(1.05);
 }
 
 .streetscape-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   stroke: var(--accent-rust);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .streetscape-placeholder-text {
-  font-family: var(--font-display);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
   font-weight: 700;
-  color: var(--text-primary);
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
 }
 
 .streetscape-caption {
-  padding: 1rem 1.2rem;
-  display: flex;
-  flex-direction: column;
+  padding: 1.2rem 1.4rem;
   background: var(--bg-card);
 }
 
 .streetscape-caption strong {
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  line-height: 1.2;
+  font-size: 1.15rem;
   color: var(--text-primary);
-  margin-bottom: 0.2rem;
+  display: block;
+  margin-bottom: 0.3rem;
 }
 
 .streetscape-caption span {
-  font-family: var(--font-serif);
   font-size: 0.92rem;
   color: var(--text-secondary);
   line-height: 1.4;
+  display: block;
 }
 
-/* Control Panel & Table */
+/* Filter Toolbar */
 .ledger-control-panel {
   display: flex;
-  justify-content: space-between;
-  background: var(--bg-tint);
-  border: 1px solid var(--rule-bold);
-  border-bottom: none;
-  padding: 1rem 1.5rem;
-  gap: 1rem;
-  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 1.4rem;
+  align-items: center;
 }
 
-.control-search input {
+.control-search {
+  flex-grow: 1;
+}
+
+.control-search input,
+.control-year select {
+  width: 100%;
+  padding: 0.8rem 1.1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--rule-bold);
   font-family: var(--font-sans);
   font-size: 0.95rem;
-  padding: 0.6rem 1rem;
-  border: 1px solid var(--rule-bold);
-  background: #FFF;
-  width: 320px;
+  color: var(--text-primary);
+  box-shadow: 2px 2px 0 rgba(46, 43, 37, 0.05);
 }
 
 .control-year select {
-  font-family: var(--font-sans);
-  font-size: 0.95rem;
-  padding: 0.6rem 1rem;
-  border: 1px solid var(--rule-bold);
-  background: #FFF;
+  width: auto;
+  min-width: 220px;
+  cursor: pointer;
 }
 
+/* Ledger Table */
 .ledger-table-box {
   background: var(--bg-card);
   border: 1px solid var(--rule-bold);
-  box-shadow: 6px 6px 0 rgba(46, 43, 37, 0.08);
+  box-shadow: 4px 4px 0 rgba(46, 43, 37, 0.08);
   overflow-x: auto;
   margin-bottom: 4rem;
 }
@@ -200,33 +257,136 @@
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-family: var(--font-sans);
-  font-size: 0.92rem;
 }
 
 .street-data-table th {
   background: var(--rule-bold);
-  color: #FFF;
-  padding: 0.85rem 1.2rem;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  padding: 0.8rem 1rem;
   font-weight: 600;
-  letter-spacing: 0.05em;
-  font-size: 0.8rem;
-  text-transform: uppercase;
 }
 
 .street-data-table td {
-  padding: 0.75rem 1.2rem;
+  padding: 0.85rem 1rem;
   border-bottom: 1px solid var(--rule-light);
+  font-size: 0.98rem;
   color: var(--text-primary);
+  vertical-align: middle;
 }
 
-.street-data-table tr:hover {
-  background-color: #FAF7F0;
+.street-data-table tbody tr:nth-child(even) {
+  background: #FCFAF6;
+}
+
+.street-data-table tbody tr:hover {
+  background: var(--bg-tint);
+}
+
+.plot-badge {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--accent-rust);
+}
+
+.trade-pill {
+  background: var(--bg-tint);
+  border: 1px solid var(--rule-subtle);
+  padding: 0.15rem 0.5rem;
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+}
+
+/* Occupant Timeline Drawer */
+.drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 30, 27, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+  z-index: 998;
+}
+
+.drawer-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.property-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 440px;
+  max-width: 90vw;
+  height: 100vh;
+  background: var(--bg-page);
+  border-left: 2px solid var(--rule-bold);
+  box-shadow: -6px 0 20px rgba(0, 0, 0, 0.15);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 999;
+  padding: 3rem 2.2rem;
+  overflow-y: auto;
+}
+
+.property-drawer.active {
+  transform: translateX(0);
+}
+
+.drawer-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
   cursor: pointer;
+  color: var(--text-primary);
+  line-height: 1;
 }
 
-.col-yr { width: 85px; font-weight: 700; color: var(--accent-rust); }
-.col-no { width: 95px; font-weight: 600; }
-.col-name { font-weight: 500; font-family: var(--font-serif); font-size: 1.05rem; }
-.col-trade { font-size: 0.88rem; }
-.col-notes { color: var(--text-muted); font-size: 0.85rem; }
+.drawer-timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.drawer-timeline-row {
+  background: var(--bg-card);
+  border: 1px solid var(--rule-bold);
+  padding: 1.1rem;
+  box-shadow: 3px 3px 0 rgba(46, 43, 37, 0.06);
+}
+
+.timeline-year {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--accent-rust);
+}
+
+.timeline-person {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.2rem 0;
+}
+
+@media (max-width: 900px) {
+  .street-summary-bar {
+    flex-wrap: wrap;
+    gap: 1.2rem;
+  }
+  .summary-sep {
+    display: none;
+  }
+  .summary-stat {
+    flex: 1 1 40%;
+  }
+  .streetscape-grid {
+    grid-template-columns: 1fr;
+  }
+}
