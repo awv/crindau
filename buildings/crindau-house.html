@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Crindau House • Monograph &amp; Architectural Survey</title>
+  <title>Crindau House • Monograph &amp; Manorial Survey</title>
   
   <link rel="stylesheet" href="https://use.typekit.net/lko4kva.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../style.css" />
@@ -23,7 +23,8 @@
       
       <nav class="site-nav">
         <a href="../index.html">&larr; Back to District Overview</a>
-        <a href="../index.html#industrial-grid">All Properties</a>
+        <a href="../index.html#industrial-grid">Historic Anchors</a>
+        <a href="../map.html">Cadastral Map</a>
         <a href="../streets/albany-street.html">Albany Street</a>
       </nav>
     </div>
@@ -47,45 +48,60 @@
       <!-- LEFT: MAIN MONOGRAPH -->
       <article class="property-narrative">
         
-        <!-- Architectural Plate / Photo Frame -->
+        <!-- Architectural / Archive Plate Frame (Clickable for Lightbox) -->
         <figure class="archival-plate">
-        <div class="plate-media">
-            <img 
-            src="../assets/images/buildings/crindau-house/crindau-house.jpg" 
-            alt="Crindau House, north-east elevation showing stone gables and mullioned windows"
-            class="plate-img"
-            />
-        </div>
-        <figcaption class="plate-label">
-            Figure 1: Architectural view showing late Elizabethan rubble stone masonry, dressed stone mullions, and steep gables.
-        </figcaption>
+          <div class="plate-media">
+            <a 
+              href="../assets/images/buildings/crindau-house/crindau-house.jpg" 
+              class="archival-plate-trigger gallery-plate-item" 
+              data-full="../assets/images/buildings/crindau-house/crindau-house.jpg" 
+              data-caption="Crindau House: South architectural elevation showing late sixteenth-century stone fabric, gables, and dressed mullions."
+            >
+              <img 
+                src="../assets/images/buildings/crindau-house/crindau-house.jpg" 
+                alt="Crindau House south elevation" 
+                class="plate-img" 
+              />
+            </a>
+          </div>
+          <figcaption class="plate-label">
+            Figure 1: Architectural view showing late Elizabethan rubble stone masonry, dressed stone mullions, and steep gables. (Click image to expand)
+          </figcaption>
         </figure>
 
         <section class="monograph-body">
           <h3>Origins &amp; Manorial Heritage</h3>
           <p class="lead-paragraph">
-            <span class="drop-cap">C</span>rindau House stands as a remarkable, solitary survivor of the rural agrarian landscape that existed long before the brick terraces of Albany Street and the chimneys of the South Wales Glass Works hemmed it in. Erected around 1580 during the reign of Elizabeth I, it was constructed as the substantial regional stone seat of the prominent Herbert family.
+            <span class="drop-cap">B</span>uilt in the late sixteenth century (c.1580), Crindau House stands as the solitary survivor of the pre-industrial agrarian landscape of the parish of Malpas. Long before railway sidings and gas retorts gripped the riverside marshes, this substantial regional stone dwelling served as the manor house and principal farm holding for the Crindau meadows.
           </p>
           <p>
-            The building conforms to the classic regional plan of the sixteenth and early seventeenth centuries, featuring massive rubble stone walling, square-headed windows with moulded stone dressings, and high, steep gables. At the time of its construction, the estate commanded wide, pastoral marshes sloping down toward the tidal bends of the River Usk.
+            Associated historically with the regional cadet branches of the influential Herbert family, the house commanded agricultural pasture land extending down to the tidal reaches of the River Usk. Its survival amidst the dense Victorian urbanisation that followed is an exceptional topographical anomaly.
           </p>
 
           <blockquote>
-            "An ancient domestic seat of considerable regional importance, demonstrating the wealth of Monmouthshire gentry prior to modern urban expansion."
+            "An enduring Elizabethan survivor of local Pennant rubble stone, insulated by private grounds against the former gasworks and rail sidings that engulfed its historic fields."
           </blockquote>
 
-          <h3>The Industrial Encroachment</h3>
+          <h3>Architectural Character &amp; Fabric</h3>
           <p>
-            During the nineteenth century, the tranquil rural character of Crindau dissolved. The construction of the Newport gasworks, railway spurs, and the Monmouthshire Canal encircled the historic grounds. The open meadows were parcelled off into building leases, creating the street grids now recorded in the commercial directories.
+            Constructed of roughly coursed local Pennant sandstone rubble with dressed stone quoins and window surrounds, the building retains significant elements of its late Tudor and early Stuart fabric. The plan form reflects a classic post-medieval evolution, featuring a two-storey gabled hall range with substantial end chimneys.
           </p>
           <p>
-            Despite severe surrounding pressures and decades of heavy rail traffic yards from its doorstep, the primary domestic block survived largely intact, receiving Grade II* listed protection in recognition of its surviving post-medieval fabric.
+            Internal surveys reveal historical features, including heavy chamfered ceiling beams, wide hearth openings, and evidence of seventeenth-century domestic alterations. The house was formally designated as a <strong>Grade II* Listed Building</strong> (Cadw Record ID 2997) in recognition of its exceptional architectural and historical significance within Newport.
+          </p>
+
+          <h3>Encirclement by Industry</h3>
+          <p>
+            The late nineteenth century saw the manor's open farmland carved up with extraordinary rapidity. The construction of the Monmouthshire Railway and Canal lines along its eastern boundary was quickly followed by the Newport Gas Company's massive Crindau Works and rows of brick terraced streets.
+          </p>
+          <p>
+            By 1900, the house was completely surrounded by industrial infrastructure. Maintained as a private dwelling, the stone boundary walls continue to delineate the ancient manorial curtilage against the modern street grid.
           </p>
         </section>
 
       </article>
 
-      <!-- RIGHT: ARCHIVAL DOSSIER & CADASTRAL DATA -->
+      <!-- RIGHT: ARCHIVAL DOSSIER & SPECIFICATION -->
       <aside class="property-sidebar">
         
         <!-- Quick Reference Dossier Card -->
@@ -102,7 +118,7 @@
             <dd>Grade II* (Cadw Ref: 2997)</dd>
             
             <dt>Primary Material</dt>
-            <dd>Local pennant rubble stone</dd>
+            <dd>Local Pennant rubble stone</dd>
             
             <dt>Associated Family</dt>
             <dd>Herbert family of Crindau</dd>
@@ -112,7 +128,7 @@
           </dl>
         </div>
 
-        <!-- Architectural Phases -->
+        <!-- Chronological Milestones -->
         <div class="sidebar-box">
           <div class="sidebar-box-header">ARCHITECTURAL PHASES</div>
           <div class="phase-list">
@@ -124,33 +140,30 @@
             <div class="phase-item">
               <span class="phase-year">c. 1700</span>
               <strong>Interior Remodelling</strong>
-              <p>Rear service additions and updated post-medieval joinery.</p>
+              <p>Reorganisation of living chambers, secondary windows, and chimney hearth alterations.</p>
             </div>
             <div class="phase-item">
-              <span class="phase-year">c. 1885</span>
-              <strong>Industrial Enclosure</strong>
-              <p>Estate lands sold off; sidings, gas retorts, and brick terraces laid out.</p>
+              <span class="phase-year">c. 1880</span>
+              <strong>Industrial Encroachment</strong>
+              <p>Meadows sold off for the Newport Gas Works and eastern rail corridors.</p>
+            </div>
+            <div class="phase-item">
+              <span class="phase-year">1951</span>
+              <strong>Statutory Listing</strong>
+              <p>Conferred Grade II* listing protecting historic masonry fabric.</p>
             </div>
           </div>
         </div>
 
-        <!-- Map Location Crop -->
+        <!-- Cadastral Directory Cross-Reference -->
         <div class="sidebar-box">
-          <div class="sidebar-box-header">ORDNANCE SURVEY CONTEXT (1885)</div>
-          <div class="map-crop-container">
-            <svg viewBox="0 0 300 200" class="crop-svg">
-              <rect width="300" height="200" fill="#EAE4D5" />
-              <!-- Rail line -->
-              <line x1="10" y1="190" x2="290" y2="20" stroke="#7A7265" stroke-width="3" stroke-dasharray="6,4"/>
-              <!-- House polygon -->
-              <polygon points="120,70 170,40 190,90 140,120" fill="#FAF7F0" stroke="#222" stroke-width="2"/>
-              <text x="135" y="85" font-family="Cinzel" font-size="9" font-weight="bold" fill="#1C1E1B">CRINDAU HO.</text>
-              <text x="145" y="98" font-family="Inter" font-size="7" fill="#832C1E">c.1580</text>
-              <!-- Trackway -->
-              <line x1="80" y1="180" x2="140" y2="120" stroke="#B0A693" stroke-width="4"/>
-            </svg>
+          <div class="sidebar-box-header">TOPOGRAPHICAL REGISTER</div>
+          <div style="padding: 1.2rem 1.4rem; font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5;">
+            <p style="margin-bottom: 0.8rem;">
+              Crindau House serves as the historic origin benchmark for all cadastral parcel boundaries surveyed in the northern quarter.
+            </p>
+            <a href="../map.html" class="inline-article-link">Locate on Cadastral Map &rarr;</a>
           </div>
-          <p class="crop-caption">Detail showing isolated position prior to dense terracing.</p>
         </div>
 
       </aside>
@@ -158,6 +171,29 @@
     </div>
 
   </main>
+
+  <!-- LIGHTBOX MODAL DIALOG -->
+  <dialog id="archival-lightbox" class="archival-lightbox">
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close Plate">&times;</button>
+      
+      <div class="lightbox-meta-top">
+        <span id="lightbox-counter" class="lightbox-counter">Plate 1 of 1</span>
+      </div>
+
+      <div class="lightbox-stage-row">
+        <button type="button" class="lightbox-nav-btn prev" id="lightbox-prev-btn" aria-label="Previous plate">&#10094;</button>
+
+        <div class="lightbox-stage">
+          <img src="" id="lightbox-img" alt="Enlarged archival plate" />
+        </div>
+
+        <button type="button" class="lightbox-nav-btn next" id="lightbox-next-btn" aria-label="Next plate">&#10095;</button>
+      </div>
+
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </dialog>
 
   <footer class="site-footer wrap">
     <div class="footer-meta">
@@ -167,5 +203,6 @@
     </div>
   </footer>
 
+  <script src="gallery.js"></script>
 </body>
 </html>

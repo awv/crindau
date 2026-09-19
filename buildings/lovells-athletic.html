@@ -7,7 +7,7 @@
   
   <link rel="stylesheet" href="https://use.typekit.net/lko4kva.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../style.css" />
@@ -24,6 +24,7 @@
       <nav class="site-nav">
         <a href="../index.html">&larr; Back to District Overview</a>
         <a href="../index.html#industrial-grid">Historic Anchors</a>
+        <a href="../map.html">Cadastral Map</a>
         <a href="lovells-confectionery.html">Lovell's Works</a>
         <a href="../streets/albany-street.html">Albany Street</a>
       </nav>
@@ -48,13 +49,24 @@
       <!-- LEFT: MAIN MONOGRAPH -->
       <article class="property-narrative">
         
-        <!-- Architectural / Archive Plate Frame -->
+        <!-- Architectural / Archive Plate Frame (Clickable for Lightbox) -->
         <figure class="archival-plate">
           <div class="plate-media">
-            <img src="../assets/images/buildings/lovells-athletic/lovells-athletic.jpg" alt="Rexville Ground grandstand and pitch" class="plate-img" />
+            <a 
+              href="../assets/images/buildings/lovells-athletic/lovells-athletic.jpg" 
+              class="archival-plate-trigger gallery-plate-item" 
+              data-full="../assets/images/buildings/lovells-athletic/lovells-athletic.jpg" 
+              data-caption="Rexville Ground (Lovells Athletic F.C.): Aerial and ground perspective showing covered grandstands, enclosed playing turf, and adjacent Albany Street factory packaging halls."
+            >
+              <img 
+                src="../assets/images/buildings/lovells-athletic/lovells-athletic.jpg" 
+                alt="Rexville Ground grandstand and pitch" 
+                class="plate-img" 
+              />
+            </a>
           </div>
           <figcaption class="plate-label">
-            Figure 1: Cadastral layout showing the enclosed playing pitch, covered spectator terracing, and adjoining factory packaging blocks along Albany Street.
+            Figure 1: Cadastral layout showing the enclosed playing pitch, covered spectator terracing, and adjoining factory packaging blocks along Albany Street. (Click image to expand)
           </figcaption>
         </figure>
 
@@ -166,6 +178,29 @@
 
   </main>
 
+  <!-- LIGHTBOX MODAL DIALOG -->
+  <dialog id="archival-lightbox" class="archival-lightbox">
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close Plate">&times;</button>
+      
+      <div class="lightbox-meta-top">
+        <span id="lightbox-counter" class="lightbox-counter">Plate 1 of 1</span>
+      </div>
+
+      <div class="lightbox-stage-row">
+        <button type="button" class="lightbox-nav-btn prev" id="lightbox-prev-btn" aria-label="Previous plate">&#10094;</button>
+
+        <div class="lightbox-stage">
+          <img src="" id="lightbox-img" alt="Enlarged archival plate" />
+        </div>
+
+        <button type="button" class="lightbox-nav-btn next" id="lightbox-next-btn" aria-label="Next plate">&#10095;</button>
+      </div>
+
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </dialog>
+
   <footer class="site-footer wrap">
     <div class="footer-meta">
       <span>CRINDAU LOCAL HISTORY SURVEY</span>
@@ -174,5 +209,6 @@
     </div>
   </footer>
 
+  <script src="gallery.js"></script>
 </body>
 </html>

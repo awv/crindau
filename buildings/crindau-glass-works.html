@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>South Wales Glass Works • Monograph &amp; Industrial Survey</title>
+  <title>Crindau Glass Works • Monograph &amp; Industrial Survey</title>
   
   <link rel="stylesheet" href="https://use.typekit.net/lko4kva.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,17 +48,24 @@
       <!-- LEFT: MAIN MONOGRAPH -->
       <article class="property-narrative">
         
-        <!-- Architectural / Archive Plate Frame -->
+        <!-- Architectural / Archive Plate Frame (Clickable for Lightbox) -->
         <figure class="archival-plate">
           <div class="plate-media">
-            <img 
-            src="../assets/images/buildings/crindau-glass-works/crindau-glass-works.jpg" 
-            alt="Crindau House, north-east elevation showing stone gables and mullioned windows"
-            class="plate-img"
-            />
+            <a 
+              href="../assets/images/buildings/crindau-glass-works/crindau-glass-works.jpg" 
+              class="archival-plate-trigger gallery-plate-item" 
+              data-full="../assets/images/buildings/crindau-glass-works/crindau-glass-works.jpg" 
+              data-caption="Crindau Glass Works: Outline survey of the Siemens continuous regenerative furnaces, mixing halls, and internal tramroads connecting to the Usk jetty."
+            >
+              <img 
+                src="../assets/images/buildings/crindau-glass-works/crindau-glass-works.jpg" 
+                alt="Crindau Glass Works survey plan and furnace houses" 
+                class="plate-img" 
+              />
+            </a>
           </div>
           <figcaption class="plate-label">
-            Figure 1: Ground plan of the Siemens furnace house, mixing halls, riverside crane jetty, and internal tramways.
+            Figure 1: Ground plan of the Siemens furnace house, mixing halls, riverside crane jetty, and internal tramways. (Click image to expand)
           </figcaption>
         </figure>
 
@@ -194,6 +201,29 @@
 
   </main>
 
+  <!-- LIGHTBOX MODAL DIALOG -->
+  <dialog id="archival-lightbox" class="archival-lightbox">
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close Plate">&times;</button>
+      
+      <div class="lightbox-meta-top">
+        <span id="lightbox-counter" class="lightbox-counter">Plate 1 of 1</span>
+      </div>
+
+      <div class="lightbox-stage-row">
+        <button type="button" class="lightbox-nav-btn prev" id="lightbox-prev-btn" aria-label="Previous plate">&#10094;</button>
+
+        <div class="lightbox-stage">
+          <img src="" id="lightbox-img" alt="Enlarged archival plate" />
+        </div>
+
+        <button type="button" class="lightbox-nav-btn next" id="lightbox-next-btn" aria-label="Next plate">&#10095;</button>
+      </div>
+
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </dialog>
+
   <footer class="site-footer wrap">
     <div class="footer-meta">
       <span>CRINDAU LOCAL HISTORY SURVEY</span>
@@ -202,5 +232,6 @@
     </div>
   </footer>
 
+  <script src="gallery.js"></script>
 </body>
 </html>

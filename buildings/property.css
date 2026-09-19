@@ -24,10 +24,12 @@
   padding: 0;
 }
 
-/* Monograph Masthead */
+/* Monograph Masthead with Extra Top Breathing Room */
 .property-masthead {
   border-bottom: 2px solid var(--rule-bold);
+  padding-top: 2.4rem;
   padding-bottom: 1.8rem;
+  margin-top: 1rem;
   margin-bottom: 3rem;
 }
 
@@ -40,7 +42,7 @@
   letter-spacing: 0.18em;
   color: var(--accent-gold);
   font-weight: 700;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
@@ -85,7 +87,7 @@
   min-width: 0;
 }
 
-/* Archival Plate Frame - Full Bleed Media, No Margin Gaps */
+/* Archival Plate Frame - Full Bleed Media */
 .archival-plate {
   background: var(--bg-card);
   border: 1px solid var(--rule-bold);
@@ -105,16 +107,28 @@
   justify-content: center;
   width: 100%;
   overflow: hidden;
+  position: relative;
+}
+
+.archival-plate-trigger {
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
 }
 
 .plate-img {
   width: 100%;
   height: auto;
-  max-height: 520px;
+  max-height: 540px;
   object-fit: cover;
   display: block;
   border: none;
   box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.archival-plate-trigger:hover .plate-img {
+  transform: scale(1.015);
 }
 
 .plate-caption {
@@ -319,7 +333,6 @@ blockquote {
   color: var(--text-secondary);
 }
 
-/* Responsive Grid */
 .monograph-gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

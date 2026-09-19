@@ -7,7 +7,7 @@
   
   <link rel="stylesheet" href="https://use.typekit.net/lko4kva.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <link rel="stylesheet" href="../style.css" />
@@ -24,6 +24,7 @@
       <nav class="site-nav">
         <a href="../index.html">&larr; Back to District Overview</a>
         <a href="../index.html#featured-industry">Principal Industry</a>
+        <a href="../map.html">Cadastral Map</a>
         <a href="../streets/albany-street.html">Albany Street</a>
       </nav>
     </div>
@@ -47,15 +48,24 @@
       <!-- LEFT: MAIN MONOGRAPH -->
       <article class="property-narrative">
         
-        <!-- Architectural / Archive Plate Frame -->
+        <!-- Architectural / Archive Plate Frame (Clickable for Lightbox) -->
         <figure class="archival-plate">
           <div class="plate-media">
-            <img src="../assets/images/buildings/lovells/rexville-works.jpg" alt="Rexville Works along Albany Street" class="plate-img" /> 
-            <span class="plate-caption">Rexville Confectionery Works &bull; Albany Street Frontage</span>
-            <span class="plate-source">G.F. Lovell &amp; Co. Ltd Survey Archive</span>
+            <a 
+              href="../assets/images/buildings/lovells/rexville-works.jpg" 
+              class="archival-plate-trigger gallery-plate-item" 
+              data-full="../assets/images/buildings/lovells/rexville-works.jpg" 
+              data-caption="Rexville Works: Multi-storey brick production halls and packing sheds extending along Albany Street and the Great Western Railway sidings."
+            >
+              <img 
+                src="../assets/images/buildings/lovells/rexville-works.jpg" 
+                alt="Rexville Works along Albany Street" 
+                class="plate-img" 
+              />
+            </a>
           </div>
           <figcaption class="plate-label">
-            Figure 1: Outline survey of the multi-storey brick production halls and packing sheds extending along the Great Western Railway spur.
+            Figure 1: Outline survey of the multi-storey brick production halls and packing sheds extending along the Great Western Railway spur. (Click image to expand)
           </figcaption>
         </figure>
 
@@ -277,7 +287,7 @@
 
   </main>
 
-  <!-- LIGHTBOX MODAL DIALOG (OUTSIDE GRID LAYOUT) -->
+  <!-- LIGHTBOX MODAL DIALOG WITH SEQUENCE NAVIGATION -->
   <dialog id="archival-lightbox" class="archival-lightbox">
     <div class="lightbox-inner">
       <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close Plate">&times;</button>

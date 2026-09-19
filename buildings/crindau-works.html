@@ -48,13 +48,24 @@
       <!-- LEFT: MAIN MONOGRAPH -->
       <article class="property-narrative">
         
-        <!-- Architectural / Archive Plate Frame -->
+        <!-- Architectural / Archive Plate Frame (Clickable for Lightbox) -->
         <figure class="archival-plate">
           <div class="plate-media">
-            <img src="../assets/images/buildings/crindau-works/crindau-works.jpg" alt="M.K. Mole Crindau Works assembly shop" class="plate-img" />
+            <a 
+              href="../assets/images/buildings/crindau-works/crindau-works.jpg" 
+              class="archival-plate-trigger gallery-plate-item" 
+              data-full="../assets/images/buildings/crindau-works/crindau-works.jpg" 
+              data-caption="Crindau Works (M. K. Mole &amp; Son Ltd): Machine and drop-forging assembly shops off Albany Street where the Mole Grip was manufactured."
+            >
+              <img 
+                src="../assets/images/buildings/crindau-works/crindau-works.jpg" 
+                alt="M.K. Mole Crindau Works assembly shop" 
+                class="plate-img" 
+              />
+            </a>
           </div>
           <figcaption class="plate-label">
-            Figure 1: Machine and drop-forging shops of M. K. Mole &amp; Son Ltd, established off Albany Street adjacent to the eastern railway sidings.
+            Figure 1: Machine and drop-forging shops of M. K. Mole &amp; Son Ltd, established off Albany Street adjacent to the eastern railway sidings. (Click image to expand)
           </figcaption>
         </figure>
 
@@ -174,6 +185,29 @@
 
   </main>
 
+  <!-- LIGHTBOX MODAL DIALOG -->
+  <dialog id="archival-lightbox" class="archival-lightbox">
+    <div class="lightbox-inner">
+      <button type="button" class="lightbox-close" id="lightbox-close-btn" aria-label="Close Plate">&times;</button>
+      
+      <div class="lightbox-meta-top">
+        <span id="lightbox-counter" class="lightbox-counter">Plate 1 of 1</span>
+      </div>
+
+      <div class="lightbox-stage-row">
+        <button type="button" class="lightbox-nav-btn prev" id="lightbox-prev-btn" aria-label="Previous plate">&#10094;</button>
+
+        <div class="lightbox-stage">
+          <img src="" id="lightbox-img" alt="Enlarged archival plate" />
+        </div>
+
+        <button type="button" class="lightbox-nav-btn next" id="lightbox-next-btn" aria-label="Next plate">&#10095;</button>
+      </div>
+
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+  </dialog>
+
   <footer class="site-footer wrap">
     <div class="footer-meta">
       <span>CRINDAU LOCAL HISTORY SURVEY</span>
@@ -182,5 +216,6 @@
     </div>
   </footer>
 
+  <script src="gallery.js"></script>
 </body>
 </html>

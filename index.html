@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
+  <!-- Leaflet Stylesheet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -33,7 +36,7 @@
 
   <main class="wrap main-stage">
 
-    <!-- HERO: TOPOGRAPHICAL OVERVIEW & MAP PORTAL -->
+    <!-- HERO: TOPOGRAPHICAL OVERVIEW & LIVE MAP PORTAL -->
     <section id="overview" class="district-portal">
       <div class="portal-narrative">
         <span class="section-tag">TOPOGRAPHICAL CONTEXT</span>
@@ -64,61 +67,28 @@
         </div>
       </div>
 
-      <!-- Cadastral Overview Map Visual -->
+      <!-- Live Cadastral Overview Frame -->
       <div class="portal-map-frame">
         <div class="map-frame-header">
-          <span>DISTRICT OVERVIEW PLAN</span>
-          <span class="map-badge">c.1885–1901 OS</span>
+          <span>DISTRICT TOPOGRAPHY</span>
+          <a href="map.html" class="map-launch-btn" title="Open Full-Screen Cadastral Map">
+            <span>Open Full Survey Map</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
         </div>
-        <div class="map-stage">
-          <svg class="map-svg" viewBox="0 0 540 380">
-            <defs>
-              <pattern id="industrialHatch" width="8" height="8" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-                <line x1="0" y1="0" x2="0" y2="8" stroke="#D1C6AF" stroke-width="1.5" />
-              </pattern>
-            </defs>
 
-            <!-- Waterway -->
-            <path d="M 450 0 C 470 120, 480 250, 520 380 L 540 380 L 540 0 Z" fill="#DCD3C1" />
-            <text x="475" y="180" class="map-water-label" transform="rotate(75 475 180)">RIVER USK</text>
+        <!-- Embedded Live Leaflet Container -->
+        <div id="hero-leaflet-map" class="hero-leaflet-container"></div>
 
-            <!-- GWR Rail Sidings -->
-            <line x1="30" y1="0" x2="420" y2="380" stroke="#7A7265" stroke-width="2.5" stroke-dasharray="6,4" />
-            <text x="210" y="210" class="map-rail-label" transform="rotate(42 210 210)">G.W.R. LINES</text>
-
-            <!-- Albany Street Corridor -->
-            <path d="M 120 70 L 370 290" stroke="#E2DAC7" stroke-width="24" />
-            <line x1="120" y1="70" x2="370" y2="290" stroke="#832C1E" stroke-width="1.5" stroke-dasharray="3,3" />
-            <text x="220" y="165" class="map-street-label" transform="rotate(40 220 165)">ALBANY STREET</text>
-
-            <!-- Works Nodes -->
-            <a href="buildings/crindau-gas-works.html" class="map-node">
-              <rect x="290" y="35" width="130" height="90" fill="url(#industrialHatch)" stroke="#832C1E" stroke-width="1.5" />
-              <circle cx="355" cy="80" r="28" fill="#ECE5D4" stroke="#832C1E" stroke-width="1.2" />
-              <text x="315" y="85" class="map-node-label">GAS WORKS</text>
-            </a>
-
-            <a href="buildings/crindau-glass-works.html" class="map-node">
-              <rect x="190" y="270" width="140" height="75" fill="url(#industrialHatch)" stroke="#832C1E" stroke-width="1.5" />
-              <text x="215" y="312" class="map-node-label">GLASS WORKS</text>
-            </a>
-
-            <a href="buildings/crindau-house.html" class="map-node">
-              <polygon points="50,110 110,80 130,130 70,160" fill="#FAF7F0" stroke="#222" stroke-width="1.8" />
-              <text x="65" y="130" class="map-node-label">CRINDAU HO.</text>
-              <text x="75" y="142" class="map-sub-label">c.1580</text>
-            </a>
-
-            <!-- Terraced Housing Blocks -->
-            <rect x="145" y="75" width="20" height="12" fill="#3A3834" />
-            <rect x="160" y="88" width="20" height="12" fill="#3A3834" />
-            <rect x="175" y="101" width="20" height="12" fill="#3A3834" />
-            <rect x="190" y="114" width="20" height="12" fill="#3A3834" />
-          </svg>
-        </div>
-        <div class="map-frame-footer">
-          <span>Cadastral overlay showing relation of riverside works to domestic corridors.</span>
-        </div>
+        <a href="map.html" class="map-frame-footer-link">
+          <div class="map-frame-footer">
+            <span>Accurate cadastral overlay. <strong>Click to explore the full interactive survey map &rarr;</strong></span>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -132,19 +102,21 @@
 
       <article class="featured-industrial-card">
         <div class="featured-visual-frame">
-          <figure class="featured-plate-mount">
-            <div class="featured-img-wrap">
-              <img 
-                src="assets/images/buildings/lovells/rexville-works.jpg" 
-                alt="Rexville Confectionery Works along Albany Street" 
-                class="featured-img" 
-              />
-            </div>
-            <figcaption class="featured-plate-caption">
-              <strong>G.F. Lovell &amp; Co. Works &bull; Albany Street</strong>
-              <span>ARCHITECTURAL ELEVATION &bull; c.1920</span>
-            </figcaption>
-          </figure>
+          <a href="buildings/lovells-confectionery.html" class="featured-img-link" title="Read Lovell's Rexville Works Monograph">
+            <figure class="featured-plate-mount">
+              <div class="featured-img-wrap">
+                <img 
+                  src="assets/images/buildings/lovells/rexville-works.jpg" 
+                  alt="Rexville Confectionery Works along Albany Street" 
+                  class="featured-img" 
+                />
+              </div>
+              <figcaption class="featured-plate-caption">
+                <strong>G.F. Lovell &amp; Co. Works &bull; Albany Street</strong>
+                <span>ARCHITECTURAL ELEVATION &bull; c.1920</span>
+              </figcaption>
+            </figure>
+          </a>
         </div>
 
         <div class="featured-body">
@@ -184,7 +156,7 @@
       </article>
     </section>
 
-    <!-- SECTION: SECONDARY ANCHORS & CIVIC SITES (STATIC HTML GRID) -->
+    <!-- SECTION: SECONDARY ANCHORS & CIVIC SITES -->
     <section id="industrial-grid" class="district-section">
       <div class="section-masthead">
         <span class="section-tag">WORKS, WHARVES &amp; CIVIC FABRIC</span>
@@ -221,13 +193,7 @@
         <a href="buildings/crindau-gas-works.html" class="landmark-card-link">
           <article class="landmark-entry-card">
             <div class="landmark-thumbnail-frame">
-              <!-- When you have an image, uncomment this img line:
               <img src="assets/images/buildings/gas-works/crindau-gas-works.jpg" alt="Crindau Gas Works" class="landmark-card-img" />
-              -->
-              <div class="landmark-icon-fallback">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
-                <span class="thumbnail-meta-text">HEAVY UTILITY &bull; 1880s</span>
-              </div>
             </div>
             <div class="landmark-card-body">
               <div>
@@ -364,7 +330,7 @@
       </div>
     </section>
 
-    <!-- SECTION: STREETS GAZETTEER CARDS (STATIC HTML GRID) -->
+    <!-- SECTION: STREETS GAZETTEER CARDS -->
     <section id="streets-index" class="district-section">
       <div class="section-masthead">
         <span class="section-tag">DIRECTORY REPOSITORY</span>
@@ -501,5 +467,8 @@
     </div>
   </footer>
 
+  <!-- Leaflet JS & Hero Map Initialiser -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="hero-map.js"></script>
 </body>
 </html>

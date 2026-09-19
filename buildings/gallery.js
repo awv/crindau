@@ -29,9 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Open clicked plate
+  // Open clicked plate and suppress default link navigation
   plates.forEach((plate, idx) => {
-    plate.addEventListener('click', () => {
+    plate.addEventListener('click', (e) => {
+      e.preventDefault();
       displayPlate(idx);
       if (typeof lightbox.showModal === 'function') {
         lightbox.showModal();
